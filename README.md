@@ -35,5 +35,5 @@ Pastikan lingkungan server Anda memenuhi persyaratan berikut:
 
 ### 1. Kloning Repositori
 ```bash
-git clone [https://github.com/username/api-studio.git](https://github.com/username/api-studio.git)
+git clone [https://github.com/agungsetiady/api-studio.git](https://github.com/agungsetiady/api-studio.git)
 cd api-studio
