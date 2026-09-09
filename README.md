@@ -2,6 +2,7 @@
 
 <img width="1366" height="989" alt="API-Studio-API-Testing-Suite-by-Aguphia" src="https://github.com/user-attachments/assets/162bdd77-a5d0-4fe1-9aa7-4c7b0cdec830" />
 
+
 ![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-777BB4?style=flat-square&logo=php&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.0-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
 ![jQuery](https://img.shields.io/badge/jQuery-3.7.1-0769AD?style=flat-square&logo=jquery&logoColor=white)
