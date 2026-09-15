@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Studio - API Testing Suite by Aguphia</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="aguphia-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="aguphia-icon.png">
+    <link rel="apple-touch-icon" href="aguphia-icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
@@ -28,11 +31,11 @@
 </head>
 <body class="bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 text-slate-800 dark:from-slate-950 dark:via-indigo-950 dark:to-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-300">
 
-    <div class="container mx-auto p-4 md:p-6 max-w-7xl">
+    <div class="container mx-auto p-4 md:p-6 max-w-9xl">
         <!-- Header & Top Navigation -->
         <header class="flex justify-between items-center mb-6 glass-panel bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/50 p-4 rounded-2xl shadow-xl dark:shadow-2xl transition-colors">
             <div class="flex items-center gap-3">
-                <div class="w-3 h-3 rounded-full bg-cyan-500 animate-pulse"></div>
+                <img src="aguphia-icon.png" class="w-8 h-8 object-contain" alt="API Studio Logo">
                 <h1 class="text-xl font-bold bg-gradient-to-r from-cyan-600 via-teal-500 to-indigo-600 dark:from-cyan-400 dark:via-teal-300 dark:to-indigo-400 bg-clip-text text-transparent">
                     API Studio
                 </h1>
@@ -42,16 +45,18 @@
             </button>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            <!-- Main Tester Panel (Left - 3 Cols) -->
-            <div class="lg:col-span-3 space-y-6">
+        <!-- Main Grid Container (Divided into 12 columns for precise sizing) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- Main Tester Panel (Left - 7 Cols) -->
+            <div class="lg:col-span-7 space-y-6">
                 <!-- Request Form Panel -->
                 <div class="glass-panel bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/50 p-6 rounded-2xl shadow-lg dark:shadow-xl space-y-5 transition-colors">
                     
                     <!-- Title & Save Action -->
                     <div class="flex gap-3">
-                        <input type="text" id="reqTitle" placeholder="Nama Request / API Title (misal: Get User List)" class="flex-1 bg-white dark:bg-slate-950/50 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 rounded-xl px-4 py-2 text-xs font-medium focus:outline-none focus:ring-1 focus:ring-cyan-500">
-                        <button id="saveBtn" class="bg-slate-200 hover:bg-slate-300 text-slate-700 border border-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 dark:border-slate-700 font-semibold px-4 py-2 rounded-xl text-xs transition flex items-center gap-1.5">
+                        <input type="text" id="reqTitle" placeholder="Nama Request / API Title (misal: Get User List)" class="flex-1 bg-white dark:bg-slate-950/50 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 rounded-xl px-4 py-2.5 text-xs font-medium focus:outline-none focus:ring-1 focus:ring-cyan-500">
+                        <button id="saveBtn" class="bg-slate-200 hover:bg-slate-300 text-slate-700 border border-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 dark:border-slate-700 font-semibold px-4 py-2.5 rounded-xl text-xs transition flex items-center gap-1.5">
                             💾 Save
                         </button>
                     </div>
@@ -92,7 +97,23 @@
                     <!-- Body Payload -->
                     <div class="border-t border-slate-200 dark:border-slate-800/80 pt-4">
                         <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 mb-2">JSON Body Payload</label>
-                        <textarea id="bodyPayload" rows="4" class="w-full bg-slate-900 dark:bg-slate-950/80 border border-slate-700 dark:border-slate-800 text-emerald-400 rounded-xl p-3 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder='{\n  "name": "Aguphia",\n  "role": "Developer"\n}'></textarea>
+                        <textarea id="bodyPayload" rows="20" class="w-full bg-slate-900 dark:bg-slate-950/80 border border-slate-700 dark:border-slate-800 text-emerald-400 rounded-xl p-3 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder='{\n  "name": "Aguphia",\n  "role": "Developer"\n}'></textarea>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!-- Right Sidebar Column (Right - 5 Cols) -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <!-- 1. Arsip Request Panel -->
+                <div class="glass-panel bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/50 p-6 rounded-2xl shadow-lg dark:shadow-xl transition-colors">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-slate-700 dark:text-slate-300 text-sm">Arsip Request</h3>
+                        <button id="refreshHistory" class="text-xs text-cyan-600 dark:text-cyan-400 hover:underline">Refresh</button>
+                    </div>
+                    <div id="historyList" class="space-y-2.5 text-xs max-h-[320px] overflow-y-auto pr-1">
+                        <p class="text-slate-500 italic">Memuat arsip...</p>
                     </div>
                 </div>
 
@@ -105,35 +126,25 @@
                             <span id="resTime" class="px-2.5 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Time: -</span>
                         </div>
                     </div>
-                    <pre id="responseBox" class="bg-slate-900 dark:bg-slate-950/90 border border-slate-800 rounded-xl p-4 text-xs font-mono text-cyan-300 overflow-x-auto max-h-[300px] min-h-[150px]">Waiting for request...</pre>
+                    <pre id="responseBox" class="bg-slate-900 dark:bg-slate-950/90 border border-slate-800 rounded-xl p-4 text-xs font-mono text-cyan-300 overflow-x-auto max-h-[350px] min-h-[150px]">Waiting for request...</pre>
                 </div>
 
-                <!-- Code Snippet Generator Panel -->
-                <div class="glass-panel bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/50 p-6 rounded-2xl shadow-lg dark:shadow-xl space-y-3 transition-colors">
-                    <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-3">
-                        <h3 class="font-bold text-slate-700 dark:text-slate-300 text-sm">Code Snippet Generator</h3>
+                <!-- 2. Code Snippet Generator Panel (Positioned Below Arsip Request) -->
+                <div class="glass-panel bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/50 p-6 rounded-2xl shadow-lg dark:shadow-xl space-y-3 transition-colors flex-1">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-200 dark:border-slate-800 pb-3 gap-2">
+                        <h3 class="font-bold text-slate-700 dark:text-slate-300 text-sm">Code Snippet</h3>
                         <!-- Tab Selector -->
-                        <div class="flex gap-1.5 bg-slate-200 dark:bg-slate-950/60 p-1 rounded-lg border border-slate-300 dark:border-slate-800 text-xs">
-                            <button class="snippet-tab px-3 py-1 rounded-md font-mono bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 font-bold" data-lang="curl">cURL</button>
-                            <button class="snippet-tab px-3 py-1 rounded-md font-mono text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" data-lang="js">JS Fetch</button>
-                            <button class="snippet-tab px-3 py-1 rounded-md font-mono text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" data-lang="python">Python</button>
-                            <button class="snippet-tab px-3 py-1 rounded-md font-mono text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" data-lang="php">PHP</button>
+                        <div class="flex gap-1 bg-slate-200 dark:bg-slate-950/60 p-1 rounded-lg border border-slate-300 dark:border-slate-800 text-xs">
+                            <button class="snippet-tab px-2.5 py-1 rounded-md font-mono bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 font-bold" data-lang="curl">cURL</button>
+                            <button class="snippet-tab px-2.5 py-1 rounded-md font-mono text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" data-lang="js">JS</button>
+                            <button class="snippet-tab px-2.5 py-1 rounded-md font-mono text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" data-lang="python">Python</button>
+                            <button class="snippet-tab px-2.5 py-1 rounded-md font-mono text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" data-lang="php">PHP</button>
                         </div>
                     </div>
-                    <pre id="snippetBox" class="bg-slate-900 dark:bg-slate-950/90 border border-slate-800 rounded-xl p-4 text-xs font-mono text-amber-300/90 overflow-x-auto">// Snippet otomatis diperbarui saat parameter diisi</pre>
+                    <pre id="snippetBox" class="bg-slate-900 dark:bg-slate-950/90 border border-slate-800 rounded-xl p-4 text-xs font-mono text-amber-300/90 overflow-x-auto max-h-[350px] min-h-[180px]">// Snippet otomatis diperbarui saat parameter diisi</pre>
                 </div>
             </div>
 
-            <!-- History Sidebar (Right - 1 Col) -->
-            <div class="glass-panel bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/50 p-6 rounded-2xl shadow-lg dark:shadow-xl h-fit transition-colors">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="font-bold text-slate-700 dark:text-slate-300 text-sm">Arsip Request</h3>
-                    <button id="refreshHistory" class="text-xs text-cyan-600 dark:text-cyan-400 hover:underline">Refresh</button>
-                </div>
-                <div id="historyList" class="space-y-2.5 text-xs max-h-[600px] overflow-y-auto pr-1">
-                    <p class="text-slate-500 italic">Memuat arsip...</p>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -312,7 +323,7 @@
                                     html += `
                                         <div class="history-item p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800/60 cursor-pointer transition" data-json='${JSON.stringify(item).replace(/'/g, "&apos;")}'>
                                             <div class="flex items-center justify-between mb-1">
-                                                <span class="font-semibold text-slate-800 dark:text-slate-200 truncate max-w-[140px]">${item.title}</span>
+                                                <span class="font-semibold text-slate-800 dark:text-slate-200 truncate max-w-[200px]">${item.title}</span>
                                                 <span class="px-1.5 py-0.5 rounded font-mono text-[10px] font-bold ${badgeColor}">${item.method}</span>
                                             </div>
                                             <div class="text-[11px] text-slate-500 dark:text-slate-400 font-mono truncate">${item.url}</div>
