@@ -1,6 +1,6 @@
 # 🚀 API Studio - API Testing Suite by Aguphia
 
-<img width="1366" height="989" alt="API-Studio-API-Testing-Suite-by-Aguphia" src="https://github.com/user-attachments/assets/162bdd77-a5d0-4fe1-9aa7-4c7b0cdec830" />
+<img width="1366" height="830" alt="image" src="https://github.com/user-attachments/assets/6d2f9789-6ce3-499b-856e-1b51f557a57c" />
 
 
 ![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-777BB4?style=flat-square&logo=php&logoColor=white)
